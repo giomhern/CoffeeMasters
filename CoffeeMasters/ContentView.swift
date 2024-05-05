@@ -10,9 +10,27 @@ import SwiftUI
 struct ContentView: View {
     @State var name = ""
     var body: some View {
-        VStack{
-            TextField("Enter your name", text: $name)
-            Text("Hello \(name)" )
+        TabView {
+            MenuPage()
+                .tabItem {
+                    Image(systemName: "cup.and.saucer")
+                    Text("Menu")
+                }
+            OffersPage()
+                .tabItem {
+                    Image(systemName: "tag")
+                    Text("Offers")
+                }
+            OrderPage()
+                .tabItem {
+                    Image(systemName: "cart")
+                    Text("Orders")
+                }
+            InfoPage()
+                .tabItem {
+                    Image(systemName: "info")
+                    Text("Info")
+                }
         }
     }
 }
